@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,35 +14,81 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.red,
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage("images/kakashi2.jpeg"),
+                foregroundImage: AssetImage("images/kakashi.jpg"),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.yellow,
+              Text(
+                "hatake kakashi",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontFamily: 'Pacifico',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "MOBILE DEVELOPER",
+                style: TextStyle(
+                  fontFamily: 'Source Sans Pro',
+                  color: Colors.teal.shade100,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade900,
+                ),
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      "+111 902320993",
+                      style: (TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.teal.shade900,
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.green,
+                ),
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      "kakashi@konoha.com",
+                      style: (TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.teal.shade900,
+                      )),
+                    ),
                   ),
-                ],
-              ),
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.blue,
-              ),
+                ),
+              )
             ],
           ),
         ),
